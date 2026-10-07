@@ -1,0 +1,171 @@
+/* Dashboard specific styles */
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.813rem;
+}
+
+/* Table styles - Professional data tables */
+.table-container {
+  overflow-x: auto;
+  margin-top: 16px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+}
+
+.data-table thead {
+  background-color: var(--bg-secondary);
+}
+
+.data-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: none;
+  font-size: 12px;
+  letter-spacing: 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.data-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.data-table tbody tr {
+  transition: background-color var(--transition-fast);
+}
+
+.data-table tbody tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.lead-name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.lead-email {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.text-muted {
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+.score-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 13px;
+  color: white;
+  min-width: 44px;
+  text-align: center;
+}
+
+/* Highlight cards */
+.highlight-card {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05));
+  border: 2px solid var(--border-color);
+}
+
+.highlight-card.highlight-primary {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.05));
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.highlight-card.highlight-success {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.05));
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.highlight-card.highlight-warning {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.05));
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.highlight-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.highlight-content svg {
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+.highlight-card.highlight-success .highlight-content svg {
+  color: var(--success);
+}
+
+.highlight-card.highlight-warning .highlight-content svg {
+  color: var(--warning);
+}
+
+.highlight-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.highlight-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Recharts custom styling */
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+.recharts-default-tooltip {
+  background-color: var(--bg-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.recharts-legend-wrapper {
+  padding-top: 1rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .data-table {
+    min-width: 800px;
+  }
+}
+
+@media (max-width: 640px) {
+  .highlight-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .highlight-value {
+    font-size: 1.25rem;
+  }
+}

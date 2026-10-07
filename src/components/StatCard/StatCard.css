@@ -1,0 +1,111 @@
+.stat-card {
+  background: var(--gradient-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: var(--shadow-sm), inset 0 1px 1px rgba(255,255,255,0.8);
+  border: 1px solid var(--border-light);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-md), inset 0 1px 1px rgba(255,255,255,0.9);
+  transform: translateY(-4px);
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+.stat-card-success::before { background: var(--gradient-success); }
+.stat-card-warning::before { background: var(--gradient-warning); }
+.stat-card-danger::before { background: var(--gradient-danger); }
+.stat-card-info::before { background: var(--gradient-secondary); }
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-card-success .stat-icon { background: var(--gradient-success); color: white; }
+.stat-card-warning .stat-icon { background: var(--gradient-warning); color: white; }
+.stat-card-danger .stat-icon { background: var(--gradient-danger); color: white; }
+.stat-card-info .stat-icon { background: var(--gradient-secondary); color: white; }
+
+.stat-change {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 700;
+  backdrop-filter: blur(4px);
+}
+
+.stat-change.trend-up { background-color: var(--success-light); color: var(--success); }
+.stat-change.trend-down { background-color: var(--danger-light); color: var(--danger); }
+
+.stat-content {
+  margin-top: 0.5rem;
+}
+
+.stat-value {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.stat-title {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 640px) {
+  .stat-card {
+    padding: 1.25rem;
+  }
+  
+  .stat-value {
+    font-size: 1.75rem;
+  }
+  
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+  }
+}
